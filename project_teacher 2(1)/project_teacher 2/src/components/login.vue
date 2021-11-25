@@ -35,6 +35,7 @@ data(){
 },
 methods:{
   login(){
+    sessionStorage.setItem("admin",this.form.username)
     var that = this
     fetch('http://test.isekko.cn/api/user/login',{
         method:'post',
