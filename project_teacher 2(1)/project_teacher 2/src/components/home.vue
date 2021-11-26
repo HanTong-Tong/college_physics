@@ -13,10 +13,10 @@
               <i class="el-icon-document"></i>
               <span slot="title">成绩导出</span>
             </el-menu-item>
-              <el-menu-item index="/modify">
+              <el-menu-item v-if="LookAdmin" index="/modify">
               <i class="el-icon-document"></i>
               <span slot="title">修改密码</span>
-            </el-menu-item>
+              </el-menu-item>
           </el-menu>
         </el-aside>
         <el-main>
@@ -28,7 +28,29 @@
 </template>
 
 <script>
-export default {};
+export default {  
+  created() {
+      this.admin()
+  },
+data(){
+  return{
+    LookAdmin:''
+}
+},
+
+methods:{
+  admin() {
+    var admin = sessionStorage.getItem("admin")
+    if(admin === "admin"){
+      this.LookAdmin = true
+    }
+    else
+    {
+       this.LookAdmin = false
+    }
+  }
+  }
+};
 </script>
 
 <style>
