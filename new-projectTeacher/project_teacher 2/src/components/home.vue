@@ -13,7 +13,11 @@
               <i class="el-icon-document"></i>
               <span slot="title">成绩导出</span>
             </el-menu-item>
+
               <el-menu-item index="/modify" v-if="LookAdmin">
+
+              <el-menu-item index="/modify">
+
               <i class="el-icon-document"></i>
               <span slot="title">修改密码</span>
             </el-menu-item>
@@ -28,6 +32,7 @@
 </template>
 
 <script>
+
 export default {  
   created() {
       this.admin()
@@ -52,6 +57,11 @@ methods:{
   }
 };
 </script>
+
+export default {};
+</script>
+
+
 <style>
 .container {
   height: 100%;
